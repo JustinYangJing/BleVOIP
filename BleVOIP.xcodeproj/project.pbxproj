@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32C40A1D25161D00411C54 /* BNRAudioData.m */; };
 		1BD3C63D1D0FD5D700F7246D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C63C1D0FD5D700F7246D /* main.m */; };
 		1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */; };
 		1BD3C6431D0FD5D700F7246D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6421D0FD5D700F7246D /* ViewController.m */; };
@@ -15,6 +16,7 @@
 		1BD3C64B1D0FD5D700F7246D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3C6491D0FD5D700F7246D /* LaunchScreen.storyboard */; };
 		1BD3C6561D0FD5D700F7246D /* BleVOIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6551D0FD5D700F7246D /* BleVOIPTests.m */; };
 		1BD3C6611D0FD5D700F7246D /* BleVOIPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6601D0FD5D700F7246D /* BleVOIPUITests.m */; };
+		1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B32C4091D25161D00411C54 /* BNRAudioData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAudioData.h; sourceTree = "<group>"; };
+		1B32C40A1D25161D00411C54 /* BNRAudioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAudioData.m; sourceTree = "<group>"; };
 		1BD3C6381D0FD5D700F7246D /* BleVOIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BleVOIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD3C63C1D0FD5D700F7246D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BD3C63E1D0FD5D700F7246D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		1BD3C65C1D0FD5D700F7246D /* BleVOIPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BleVOIPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD3C6601D0FD5D700F7246D /* BleVOIPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BleVOIPUITests.m; sourceTree = "<group>"; };
 		1BD3C6621D0FD5D700F7246D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BD3C66E1D0FD8B400F7246D /* VoiceConvertHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConvertHandle.h; sourceTree = "<group>"; };
+		1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceConvertHandle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +111,15 @@
 				1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */,
 				1BD3C6411D0FD5D700F7246D /* ViewController.h */,
 				1BD3C6421D0FD5D700F7246D /* ViewController.m */,
+				1BD3C66E1D0FD8B400F7246D /* VoiceConvertHandle.h */,
+				1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */,
 				1BD3C6441D0FD5D700F7246D /* Main.storyboard */,
 				1BD3C6471D0FD5D700F7246D /* Assets.xcassets */,
 				1BD3C6491D0FD5D700F7246D /* LaunchScreen.storyboard */,
 				1BD3C64C1D0FD5D700F7246D /* Info.plist */,
 				1BD3C63B1D0FD5D700F7246D /* Supporting Files */,
+				1B32C4091D25161D00411C54 /* BNRAudioData.h */,
+				1B32C40A1D25161D00411C54 /* BNRAudioData.m */,
 			);
 			path = BleVOIP;
 			sourceTree = "<group>";
@@ -272,6 +282,8 @@
 			files = (
 				1BD3C6431D0FD5D700F7246D /* ViewController.m in Sources */,
 				1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */,
+				1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */,
+				1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */,
 				1BD3C63D1D0FD5D700F7246D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BleVOIP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Het.BleVOIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BleVOIP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Het.BleVOIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +512,7 @@
 				1BD3C6671D0FD5D700F7246D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BD3C6681D0FD5D700F7246D /* Build configuration list for PBXNativeTarget "BleVOIPTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +521,7 @@
 				1BD3C66A1D0FD5D700F7246D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BD3C66B1D0FD5D700F7246D /* Build configuration list for PBXNativeTarget "BleVOIPUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +530,7 @@
 				1BD3C66D1D0FD5D700F7246D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
