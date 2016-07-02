@@ -64,8 +64,6 @@ static pthread_cond_t   buffcond;
     AudioQueueRef               _playQueue;
     AudioQueueBufferRef         _queueBuf[3];
     
-    CFURLRef                    destinationURL;
-    AudioFileID                 destinationFileID;
     
     NSMutableArray *_buffers;
     NSMutableArray *_reusableBuffers;
@@ -90,7 +88,6 @@ RecordStruct    recordStruct;
         handle = [[VoiceConvertHandle alloc] init];
         [handle dataInit];
         [handle configAudio];
-//        [handle anotherConfigInit];
     });
     return handle;
 }
@@ -118,7 +115,7 @@ RecordStruct    recordStruct;
     //    Obtain a RemoteIO unit instance
     AudioComponentDescription acd;
     acd.componentType = kAudioUnitType_Output;
-    acd.componentSubType = kAudioUnitSubType_RemoteIO;
+    acd.componentSubType = kAudioUnitSubType_VoiceProcessingIO;
     acd.componentFlags = 0;
     acd.componentFlagsMask = 0;
     acd.componentManufacturer = kAudioUnitManufacturer_Apple;
@@ -133,10 +130,10 @@ RecordStruct    recordStruct;
                          kInputBus,
                          &enable,
                          sizeof(enable));
-    AudioUnitSetProperty(_toneUnit,
-                         kAudioOutputUnitProperty_EnableIO,
-                         kAudioUnitScope_Output,
-                         kOutoutBus, &enable, sizeof(enable));
+//    AudioUnitSetProperty(_toneUnit,
+//                         kAudioOutputUnitProperty_EnableIO,
+//                         kAudioUnitScope_Output,
+//                         kOutoutBus, &enable, sizeof(enable));
     
     mAudioFormat.mSampleRate         = kSmaple;//采样率
     mAudioFormat.mFormatID           = kAudioFormatLinearPCM;//PCM采样
@@ -148,11 +145,11 @@ RecordStruct    recordStruct;
     mAudioFormat.mBytesPerPacket     = mAudioFormat.mBytesPerFrame*mAudioFormat.mFramesPerPacket;//每个数据包的bytes总数，每帧的bytes数＊每个数据包的帧数
     mAudioFormat.mReserved           = 0;
     
-    CheckError(AudioUnitSetProperty(_toneUnit,
-                                    kAudioUnitProperty_StreamFormat,
-                                    kAudioUnitScope_Input, kOutoutBus,
-                                    &mAudioFormat, sizeof(mAudioFormat)),
-               "couldn't set the remote I/O unit's output client format");
+//    CheckError(AudioUnitSetProperty(_toneUnit,
+//                                    kAudioUnitProperty_StreamFormat,
+//                                    kAudioUnitScope_Input, kOutoutBus,
+//                                    &mAudioFormat, sizeof(mAudioFormat)),
+//               "couldn't set the remote I/O unit's output client format");
     CheckError(AudioUnitSetProperty(_toneUnit,
                                     kAudioUnitProperty_StreamFormat,
                                     kAudioUnitScope_Output, kInputBus,
@@ -171,18 +168,8 @@ RecordStruct    recordStruct;
                "couldn't initialize the remote I/O unit");
     CheckError(AudioOutputUnitStart(_toneUnit), "couldnt start audio unit");
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask,
-                                                         YES);
-    NSString *descriptionPth = [[NSString alloc] initWithFormat:@"%@/output.caf",paths[0]];
-    NSLog(@"%@",descriptionPth);
-    destinationURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault,
-                                                   (CFStringRef)descriptionPth,
-                                                   kCFURLPOSIXPathStyle, false);
-    
    
     
-//    [self anotherConfigInit];
 
     //convertInit for PCM TO AAC
     AudioStreamBasicDescription sourceDes = mAudioFormat;
@@ -238,13 +225,7 @@ RecordStruct    recordStruct;
                                          size, &bitRate),
                "cant set covert property bit rate");
     
-#warning by justin
-    CheckError(AudioFileCreateWithURL(destinationURL,
-                                      kAudioFileCAFType,
-                                      &targetDes,
-                                      kAudioFileFlags_EraseFile,
-                                      &destinationFileID),
-               "cant create audiofile id");
+
     
     [self performSelectorInBackground:@selector(convertPCMToAAC) withObject:nil];
 
@@ -386,21 +367,6 @@ OSStatus inputRenderTone(
         NSMutableData *fullData = [NSMutableData dataWithBytes:bufferList->mBuffers[0].mData length:bufferList->mBuffers[0].mDataByteSize];
         static int outputFilePos = 0;
         UInt32 numBytes = [fullData length];
-     //写到文件中
-        /*
-        if (outputFilePos > 1200) {
-            AudioFileClose(destinationFileID);
-        }else{
-        CheckError(AudioFileWritePackets(destinationFileID,
-                                         false,
-                                         numBytes,
-                                         outputPacketDescriptions,
-                                         outputFilePos,
-                                         &packetSize,
-                                         [fullData bytes]),
-                   "cant write");
-        outputFilePos += packetSize;
-        }*/
         
         
         static int initQueueBufCount = 0;
