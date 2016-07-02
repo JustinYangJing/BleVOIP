@@ -403,8 +403,6 @@ OSStatus inputRenderTone(
         }*/
         
         
-        static int initQueueBufCount = 0;
-        static int lastIndex = 0;
 //        if (initQueueBufCount < 3) {
 //            AudioQueueAllocateBuffer(_playQueue,
 //                                     1024,
