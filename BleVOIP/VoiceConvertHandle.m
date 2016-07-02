@@ -55,14 +55,11 @@ static pthread_cond_t   buffcond;
 @interface VoiceConvertHandle ()
 {
     AURenderCallbackStruct      _inputProc;
-    AURenderCallbackStruct      _outputProc;
     AudioStreamBasicDescription _audioFormat;
     AudioStreamBasicDescription mAudioFormat;
     
-    PCMNode                     *_recordPCMNodeHead;
-    PCMNode                     *_recordPCMNodeTail;
+ 
     AudioConverterRef           _encodeConvertRef;
-    AudioConverterRef           _decodeConvertRef;
     
     AudioQueueRef               _playQueue;
     AudioQueueBufferRef         _queueBuf[3];
@@ -100,8 +97,6 @@ RecordStruct    recordStruct;
 -(void)configAudio{
     _inputProc.inputProc = inputRenderTone;
     _inputProc.inputProcRefCon = (__bridge void *)(self);
-    _outputProc.inputProc = outputRenderTone;
-    _outputProc.inputProcRefCon = (__bridge void *)(self);
     
     //对AudioSession的一些设置
     NSError *error;
@@ -171,12 +166,6 @@ RecordStruct    recordStruct;
                                     &_inputProc, sizeof(_inputProc)),
                "couldnt set remote i/o render callback for input");
     
-//    CheckError(AudioUnitSetProperty(_toneUnit,
-//                                    kAudioUnitProperty_SetRenderCallback,
-//                                    kAudioUnitScope_Input,
-//                                    kOutoutBus,
-//                                    &_outputProc, sizeof(_outputProc)),
-//               "couldnt set remote i/o render callback for output");
     
     CheckError(AudioUnitInitialize(_toneUnit),
                "couldn't initialize the remote I/O unit");
@@ -303,13 +292,6 @@ RecordStruct    recordStruct;
     rc = pthread_cond_init(&buffcond, NULL);
     assert(rc == 0);
     
-    //增加sentinel的双向链表，他们的表头表位所指向的节点无数据
-    _recordPCMNodeHead = malloc(sizeof(PCMNode));
-    _recordPCMNodeTail = malloc(sizeof(PCMNode));
-    _recordPCMNodeHead->previous = NULL;
-    _recordPCMNodeHead->next = _recordPCMNodeTail;
-    _recordPCMNodeTail->next = NULL;
-    _recordPCMNodeTail->previous = _recordPCMNodeHead;
     
     memset(recordStruct.recordArr, 0, kRecordDataLen);
     recordStruct.front = recordStruct.rear = 0;
@@ -353,32 +335,9 @@ OSStatus inputRenderTone(
     if ((lastTimeRear/1024 + 1) == (recordStruct.rear/1024)) {
          pthread_cond_signal(&recordCond);
     }
-//    PCMNode *tmpNode = malloc(sizeof(PCMNode));
-//    tmpNode->data = malloc(bufferList.mBuffers[0].mDataByteSize);
-//    memcpy(tmpNode->data, bufferList.mBuffers[0].mData, bufferList.mBuffers[0].mDataByteSize);
-//    tmpNode->dataSize = bufferList.mBuffers[0].mDataByteSize;
-//    pthread_mutex_lock(&recordLock);
-//    tmpNode->next = THIS->_recordPCMNodeHead->next;
-//    tmpNode->previous = THIS->_recordPCMNodeHead;
-//    THIS->_recordPCMNodeHead->next = tmpNode;
-//    tmpNode->next->previous = tmpNode;
-//    pthread_mutex_unlock(&recordLock);
-//    pthread_cond_signal(&recordCond);
     return status;
 }
-OSStatus outputRenderTone(
-                          void *inRefCon,
-                          AudioUnitRenderActionFlags 	*ioActionFlags,
-                          const AudioTimeStamp 		*inTimeStamp,
-                          UInt32 						inBusNumber,
-                          UInt32 						inNumberFrames,
-                          AudioBufferList 			*ioData)
 
-{
-    VoiceConvertHandle *THIS=(__bridge VoiceConvertHandle*)inRefCon;
-    SInt16 *outSamplesChannelLeft   = (SInt16 *)ioData->mBuffers[0].mData;
-    return 0;
-}
 
 -(void)convertPCMToAAC{
     UInt32 maxPacketSize = 0;
