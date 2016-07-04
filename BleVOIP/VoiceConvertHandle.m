@@ -46,10 +46,10 @@ static pthread_cond_t   playCond;
 static pthread_mutex_t  buffLock;
 static pthread_cond_t   buffcond;
 
-@interface MCAudioQueueBuffer : NSObject
+@interface BNRAudioQueueBuffer : NSObject
 @property (nonatomic,assign) AudioQueueBufferRef buffer;
 @end
-@implementation MCAudioQueueBuffer
+@implementation BNRAudioQueueBuffer
 @end
 
 @interface VoiceConvertHandle ()
@@ -74,8 +74,6 @@ static pthread_cond_t   buffcond;
 
 @property (nonatomic,strong) NSMutableArray     *aacArry;
 
-//test
-@property (nonatomic,strong) AVAudioPlayer *player;
 @end
 
 @implementation VoiceConvertHandle
@@ -130,10 +128,7 @@ RecordStruct    recordStruct;
                          kInputBus,
                          &enable,
                          sizeof(enable));
-//    AudioUnitSetProperty(_toneUnit,
-//                         kAudioOutputUnitProperty_EnableIO,
-//                         kAudioUnitScope_Output,
-//                         kOutoutBus, &enable, sizeof(enable));
+
     
     mAudioFormat.mSampleRate         = kSmaple;//采样率
     mAudioFormat.mFormatID           = kAudioFormatLinearPCM;//PCM采样
@@ -145,11 +140,6 @@ RecordStruct    recordStruct;
     mAudioFormat.mBytesPerPacket     = mAudioFormat.mBytesPerFrame*mAudioFormat.mFramesPerPacket;//每个数据包的bytes总数，每帧的bytes数＊每个数据包的帧数
     mAudioFormat.mReserved           = 0;
     
-//    CheckError(AudioUnitSetProperty(_toneUnit,
-//                                    kAudioUnitProperty_StreamFormat,
-//                                    kAudioUnitScope_Input, kOutoutBus,
-//                                    &mAudioFormat, sizeof(mAudioFormat)),
-//               "couldn't set the remote I/O unit's output client format");
     CheckError(AudioUnitSetProperty(_toneUnit,
                                     kAudioUnitProperty_StreamFormat,
                                     kAudioUnitScope_Output, kInputBus,
@@ -245,7 +235,7 @@ RecordStruct    recordStruct;
     for (int i = 0; i < 3; i++) {
         AudioQueueBufferRef buffer;
         CheckError(AudioQueueAllocateBuffer(_playQueue, 1024, &buffer), "cant alloc buff");
-        MCAudioQueueBuffer *buffObj = [[MCAudioQueueBuffer alloc] init];
+        BNRAudioQueueBuffer *buffObj = [[BNRAudioQueueBuffer alloc] init];
         buffObj.buffer = buffer;
         [_buffers addObject:buffObj];
         [_reusableBuffers addObject:buffObj];
@@ -358,47 +348,17 @@ OSStatus inputRenderTone(
                    "cant set AudioConverterFillComplexBuffer");
 
         free(readyData);
-        //加上AAC头部，并发送
-//        int headLength = 0;
-//        char *head = newAdtsDataForPacketLength(bufferList->mBuffers[0].mDataByteSize, kSmaple, 1, &headLength);
-//        NSMutableData *fullData = [NSMutableData dataWithBytes:head length:headLength];
-//        free(head);
-//        [fullData appendBytes:bufferList->mBuffers[0].mData length:bufferList->mBuffers[0].mDataByteSize];
+
         NSMutableData *fullData = [NSMutableData dataWithBytes:bufferList->mBuffers[0].mData length:bufferList->mBuffers[0].mDataByteSize];
-        static int outputFilePos = 0;
-        UInt32 numBytes = [fullData length];
         
-        
-        static int initQueueBufCount = 0;
         static int lastIndex = 0;
-//        if (initQueueBufCount < 3) {
-//            AudioQueueAllocateBuffer(_playQueue,
-//                                     1024,
-//                                     &_queueBuf[initQueueBufCount]);
-//            AudioQueueBufferRef buf = _queueBuf[initQueueBufCount];
-//            initQueueBufCount++;
-//            
-//            memcpy(buf->mAudioData, [fullData bytes], [fullData length]);
-//            buf->mAudioDataByteSize = [fullData length];
-//            AudioStreamPacketDescription packetDescription;
-//            packetDescription.mDataByteSize = [fullData length];
-//        
-//            packetDescription.mStartOffset = lastIndex;
-//            AudioQueueEnqueueBuffer(_playQueue,
-//                                    buf,
-//                                    1, &packetDescription);
-//            lastIndex += [fullData length];
-//            if (initQueueBufCount == 3) {
-//                AudioQueueStart(_playQueue, nil);
-//            }
-//        }else{
-            pthread_mutex_lock(&playLock);
-            AudioStreamPacketDescription packetDescription;
-            packetDescription.mDataByteSize = [fullData length];
-            packetDescription.mStartOffset = lastIndex;
-            lastIndex += [fullData length];
-            BNRAudioData *audioData = [BNRAudioData parsedAudioDataWithBytes:[fullData bytes] packetDescription:packetDescription];
-            [self.aacArry addObject:audioData];
+        pthread_mutex_lock(&playLock);
+        AudioStreamPacketDescription packetDescription;
+        packetDescription.mDataByteSize = (UInt32)[fullData length];
+        packetDescription.mStartOffset = lastIndex;
+        lastIndex += [fullData length];
+        BNRAudioData *audioData = [BNRAudioData parsedAudioDataWithBytes:[fullData bytes] packetDescription:packetDescription];
+        [self.aacArry addObject:audioData];
         BOOL  couldSignal = NO;
         if (self.aacArry.count%8 == 0 && self.aacArry.count > 0) {
             lastIndex = 0;
@@ -409,7 +369,6 @@ OSStatus inputRenderTone(
             pthread_cond_signal(&playCond);
         }
         
-//        }
     }
 }
 -(void)playData{
@@ -438,7 +397,7 @@ OSStatus inputRenderTone(
             pthread_cond_wait(&buffcond, &buffLock);
            
         }
-        MCAudioQueueBuffer *bufferObj = [_reusableBuffers firstObject];
+        BNRAudioQueueBuffer *bufferObj = [_reusableBuffers firstObject];
         [_reusableBuffers removeObject:bufferObj];
         pthread_mutex_unlock(&buffLock);
         
@@ -493,130 +452,9 @@ static void fillBufCallback(void *inUserData,
         }
     }
     
-//    pthread_mutex_lock(&playLock);
-//    pthread_cond_wait(&playCond, &playLock);
-//    BNRAudioData *audioData = [THIS->_aacArry firstObject];
-//    memcpy((unsigned char *)buffer->mAudioData, [audioData.data bytes], [audioData.data length]);
-//    buffer->mAudioDataByteSize = [audioData.data length];
-//    [THIS->_aacArry removeObjectAtIndex:0];
-//    pthread_mutex_unlock(&playLock);
-//    AudioStreamPacketDescription pak = audioData.packetDescription;
-//    CheckError(AudioQueueEnqueueBuffer(inAQ, buffer, 1, &pak),
-//               "cant enqueue buf");
-}
-
-char* newAdtsDataForPacketLength(int packetLength, int samplerate, int channelCount, int* ioHeaderLen) {
-    int adtsLength = 7;
-    char *packet = malloc(sizeof(char) * adtsLength);
-    // Variables Recycled by addADTStoPacket
-    int profile = 2;  //AAC LC
-    //39=MediaCodecInfo.CodecProfileLevel.AACObjectELD;
-    int freqIdx = freqIdxForAdtsHeader(samplerate);
-    int chanCfg = channelIdxForAdtsHeader(channelCount);  //MPEG-4 Audio Channel Configuration.
-    NSUInteger fullLength = adtsLength + packetLength;
-    // fill in ADTS data
-    packet[0] = (char)0xFF;
-    // 11111111  = syncword
-    packet[1] = (char)0xF9;
-    // 1111 1 00 1  = syncword MPEG-2 Layer CRC
-    packet[2] = (char)(((profile-1)<<6) + (freqIdx<<2) +(chanCfg>>2));
-    packet[3] = (char)(((chanCfg&3)<<6) + (fullLength>>11));
-    packet[4] = (char)((fullLength&0x7FF) >> 3);
-    packet[5] = (char)(((fullLength&7)<<5) + 0x1F);
-    packet[6] = (char)0xFC;
-    //    NSData *data = [NSData dataWithBytesNoCopy:packet length:adtsLength freeWhenDone:YES];
-    //    return data;
-    *ioHeaderLen = adtsLength;
-    return packet;
-}
-int freqIdxForAdtsHeader(int samplerate)
-{
-    /**
-     0: 96000 Hz
-     1: 88200 Hz
-     2: 64000 Hz
-     3: 48000 Hz
-     4: 44100 Hz
-     5: 32000 Hz
-     6: 24000 Hz
-     7: 22050 Hz
-     8: 16000 Hz
-     9: 12000 Hz
-     10: 11025 Hz
-     11: 8000 Hz
-     12: 7350 Hz
-     13: Reserved
-     14: Reserved
-     15: frequency is written explictly
-     */
-    int idx = 4;
-    if (samplerate >= 7350 && samplerate < 8000) {
-        idx = 12;
-    }
-    else if (samplerate >= 8000 && samplerate < 11025) {
-        idx = 11;
-    }
-    else if (samplerate >= 11025 && samplerate < 12000) {
-        idx = 10;
-    }
-    else if (samplerate >= 12000 && samplerate < 16000) {
-        idx = 9;
-    }
-    else if (samplerate >= 16000 && samplerate < 22050) {
-        idx = 8;
-    }
-    else if (samplerate >= 22050 && samplerate < 24000) {
-        idx = 7;
-    }
-    else if (samplerate >= 24000 && samplerate < 32000) {
-        idx = 6;
-    }
-    else if (samplerate >= 32000 && samplerate < 44100) {
-        idx = 5;
-    }
-    else if (samplerate >= 44100 && samplerate < 48000) {
-        idx = 4;
-    }
-    else if (samplerate >= 48000 && samplerate < 64000) {
-        idx = 3;
-    }
-    else if (samplerate >= 64000 && samplerate < 88200) {
-        idx = 2;
-    }
-    else if (samplerate >= 88200 && samplerate < 96000) {
-        idx = 1;
-    }
-    else if (samplerate >= 96000) {
-        idx = 0;
-    }
-    
-    return idx;
 }
 
 
-int channelIdxForAdtsHeader(int channelCount)
-{
-    /**
-     0: Defined in AOT Specifc Config
-     1: 1 channel: front-center
-     2: 2 channels: front-left, front-right
-     3: 3 channels: front-center, front-left, front-right
-     4: 4 channels: front-center, front-left, front-right, back-center
-     5: 5 channels: front-center, front-left, front-right, back-left, back-right
-     6: 6 channels: front-center, front-left, front-right, back-left, back-right, LFE-channel
-     7: 8 channels: front-center, front-left, front-right, side-left, side-right, back-left, back-right, LFE-channel
-     8-15: Reserved
-     */
-    int ret = 2;
-    if (channelCount == 1) {
-        ret = 1;
-    }
-    else if (channelCount == 2) {
-        ret = 2;
-    }
-    
-    return ret;
-}
 
 #pragma mark - mutex
 - (void)_mutexInit
