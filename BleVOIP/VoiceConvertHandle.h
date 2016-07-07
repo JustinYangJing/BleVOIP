@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol VoiceConvertHandleDelegate <NSObject>
+
+-(void)covertedData:(NSData *)data;
+
+@end
+
 @interface VoiceConvertHandle : NSObject
+@property (nonatomic,weak) id<VoiceConvertHandleDelegate> delegate;
+
 +(instancetype)shareInstance;
+-(void)playWithData:(NSData *)data;
 @end

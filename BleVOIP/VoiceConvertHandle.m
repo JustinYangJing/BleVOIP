@@ -351,13 +351,37 @@ OSStatus inputRenderTone(
 
         NSMutableData *fullData = [NSMutableData dataWithBytes:bufferList->mBuffers[0].mData length:bufferList->mBuffers[0].mDataByteSize];
         
+        if ([self.delegate respondsToSelector:@selector(covertedData:)]) {
+            [self.delegate covertedData:[fullData copy]];
+        }
+//        static int lastIndex = 0;
+//        pthread_mutex_lock(&playLock);
+//        AudioStreamPacketDescription packetDescription;
+//        packetDescription.mDataByteSize = (UInt32)[fullData length];
+//        packetDescription.mStartOffset = lastIndex;
+//        lastIndex += [fullData length];
+//        BNRAudioData *audioData = [BNRAudioData parsedAudioDataWithBytes:[fullData bytes] packetDescription:packetDescription];
+//        [self.aacArry addObject:audioData];
+//        BOOL  couldSignal = NO;
+//        if (self.aacArry.count%8 == 0 && self.aacArry.count > 0) {
+//            lastIndex = 0;
+//            couldSignal = YES;
+//        }
+//            pthread_mutex_unlock(&playLock);
+//        if (couldSignal) {
+//            pthread_cond_signal(&playCond);
+//        }
+        
+    }
+}
+-(void)playWithData:(NSData *)data{
         static int lastIndex = 0;
         pthread_mutex_lock(&playLock);
         AudioStreamPacketDescription packetDescription;
-        packetDescription.mDataByteSize = (UInt32)[fullData length];
+        packetDescription.mDataByteSize = (UInt32)[data length];
         packetDescription.mStartOffset = lastIndex;
-        lastIndex += [fullData length];
-        BNRAudioData *audioData = [BNRAudioData parsedAudioDataWithBytes:[fullData bytes] packetDescription:packetDescription];
+        lastIndex += [data length];
+        BNRAudioData *audioData = [BNRAudioData parsedAudioDataWithBytes:[data bytes] packetDescription:packetDescription];
         [self.aacArry addObject:audioData];
         BOOL  couldSignal = NO;
         if (self.aacArry.count%8 == 0 && self.aacArry.count > 0) {
@@ -368,8 +392,6 @@ OSStatus inputRenderTone(
         if (couldSignal) {
             pthread_cond_signal(&playCond);
         }
-        
-    }
 }
 -(void)playData{
     for (; ; ) {

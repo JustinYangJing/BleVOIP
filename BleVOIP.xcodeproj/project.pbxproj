@@ -8,15 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32C40A1D25161D00411C54 /* BNRAudioData.m */; };
+		1B73BEAA1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
+		1B73BEAB1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
+		1B73BEAC1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
+		1B73BEB41D2A885D003E6604 /* BNRBLECentral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEAF1D2A885D003E6604 /* BNRBLECentral.m */; };
+		1B73BEB51D2A885D003E6604 /* BNRBLEPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */; };
+		1B73BEB61D2A885D003E6604 /* BNRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB31D2A885D003E6604 /* BNRConstants.m */; };
+		1B73BEB91D2A88F1003E6604 /* BNRFindPeripheralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB81D2A88F1003E6604 /* BNRFindPeripheralVC.m */; };
+		1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
+		1B73BEBD1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
+		1B73BEBE1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
 		1BD3C63D1D0FD5D700F7246D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C63C1D0FD5D700F7246D /* main.m */; };
 		1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */; };
-		1BD3C6431D0FD5D700F7246D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6421D0FD5D700F7246D /* ViewController.m */; };
 		1BD3C6461D0FD5D700F7246D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3C6441D0FD5D700F7246D /* Main.storyboard */; };
 		1BD3C6481D0FD5D700F7246D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3C6471D0FD5D700F7246D /* Assets.xcassets */; };
 		1BD3C64B1D0FD5D700F7246D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3C6491D0FD5D700F7246D /* LaunchScreen.storyboard */; };
 		1BD3C6561D0FD5D700F7246D /* BleVOIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6551D0FD5D700F7246D /* BleVOIPTests.m */; };
 		1BD3C6611D0FD5D700F7246D /* BleVOIPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6601D0FD5D700F7246D /* BleVOIPUITests.m */; };
 		1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */; };
+		98ACDD75E188EB95708ECD95 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DBD61C1733CEF0655CAD9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +49,22 @@
 /* Begin PBXFileReference section */
 		1B32C4091D25161D00411C54 /* BNRAudioData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAudioData.h; sourceTree = "<group>"; };
 		1B32C40A1D25161D00411C54 /* BNRAudioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAudioData.m; sourceTree = "<group>"; };
+		1B73BEA81D2A8676003E6604 /* BNRMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRMainVC.h; path = ViewControllers/BNRMainVC.h; sourceTree = "<group>"; };
+		1B73BEA91D2A8676003E6604 /* BNRMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRMainVC.m; path = ViewControllers/BNRMainVC.m; sourceTree = "<group>"; };
+		1B73BEAE1D2A885D003E6604 /* BNRBLECentral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRBLECentral.h; sourceTree = "<group>"; };
+		1B73BEAF1D2A885D003E6604 /* BNRBLECentral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRBLECentral.m; sourceTree = "<group>"; };
+		1B73BEB01D2A885D003E6604 /* BNRBLEPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRBLEPeripheral.h; sourceTree = "<group>"; };
+		1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRBLEPeripheral.m; sourceTree = "<group>"; };
+		1B73BEB21D2A885D003E6604 /* BNRConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConstants.h; sourceTree = "<group>"; };
+		1B73BEB31D2A885D003E6604 /* BNRConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConstants.m; sourceTree = "<group>"; };
+		1B73BEB71D2A88F1003E6604 /* BNRFindPeripheralVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRFindPeripheralVC.h; sourceTree = "<group>"; };
+		1B73BEB81D2A88F1003E6604 /* BNRFindPeripheralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRFindPeripheralVC.m; sourceTree = "<group>"; };
+		1B73BEBA1D2A8DA4003E6604 /* BNRChatRoomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRChatRoomVC.h; path = ViewControllers/BNRChatRoomVC.h; sourceTree = "<group>"; };
+		1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRChatRoomVC.m; path = ViewControllers/BNRChatRoomVC.m; sourceTree = "<group>"; };
 		1BD3C6381D0FD5D700F7246D /* BleVOIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BleVOIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD3C63C1D0FD5D700F7246D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BD3C63E1D0FD5D700F7246D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1BD3C6411D0FD5D700F7246D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1BD3C6421D0FD5D700F7246D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1BD3C6451D0FD5D700F7246D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BD3C6471D0FD5D700F7246D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BD3C64A1D0FD5D700F7246D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +77,9 @@
 		1BD3C6621D0FD5D700F7246D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BD3C66E1D0FD8B400F7246D /* VoiceConvertHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConvertHandle.h; sourceTree = "<group>"; };
 		1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceConvertHandle.m; sourceTree = "<group>"; };
+		2C2DBD61C1733CEF0655CAD9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98ACDD75E188EB95708ECD95 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +108,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B73BEA71D2A8647003E6604 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B73BEB71D2A88F1003E6604 /* BNRFindPeripheralVC.h */,
+				1B73BEB81D2A88F1003E6604 /* BNRFindPeripheralVC.m */,
+				1B73BEA81D2A8676003E6604 /* BNRMainVC.h */,
+				1B73BEA91D2A8676003E6604 /* BNRMainVC.m */,
+				1B73BEBA1D2A8DA4003E6604 /* BNRChatRoomVC.h */,
+				1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B73BEAD1D2A885D003E6604 /* BleCommication */ = {
+			isa = PBXGroup;
+			children = (
+				1B73BEAE1D2A885D003E6604 /* BNRBLECentral.h */,
+				1B73BEAF1D2A885D003E6604 /* BNRBLECentral.m */,
+				1B73BEB01D2A885D003E6604 /* BNRBLEPeripheral.h */,
+				1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */,
+				1B73BEB21D2A885D003E6604 /* BNRConstants.h */,
+				1B73BEB31D2A885D003E6604 /* BNRConstants.m */,
+			);
+			path = BleCommication;
+			sourceTree = "<group>";
+		};
 		1BD3C62F1D0FD5D700F7246D = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +141,8 @@
 				1BD3C6541D0FD5D700F7246D /* BleVOIPTests */,
 				1BD3C65F1D0FD5D700F7246D /* BleVOIPUITests */,
 				1BD3C6391D0FD5D700F7246D /* Products */,
+				CAB790725CF7E34B215740FE /* Pods */,
+				427FF451B9785437D2539B2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,10 +159,10 @@
 		1BD3C63A1D0FD5D700F7246D /* BleVOIP */ = {
 			isa = PBXGroup;
 			children = (
+				1B73BEAD1D2A885D003E6604 /* BleCommication */,
+				1B73BEA71D2A8647003E6604 /* ViewControllers */,
 				1BD3C63E1D0FD5D700F7246D /* AppDelegate.h */,
 				1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */,
-				1BD3C6411D0FD5D700F7246D /* ViewController.h */,
-				1BD3C6421D0FD5D700F7246D /* ViewController.m */,
 				1BD3C66E1D0FD8B400F7246D /* VoiceConvertHandle.h */,
 				1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */,
 				1BD3C6441D0FD5D700F7246D /* Main.storyboard */,
@@ -150,6 +202,23 @@
 			path = BleVOIPUITests;
 			sourceTree = "<group>";
 		};
+		427FF451B9785437D2539B2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C2DBD61C1733CEF0655CAD9 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAB790725CF7E34B215740FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */,
+				4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,9 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BD3C6651D0FD5D700F7246D /* Build configuration list for PBXNativeTarget "BleVOIP" */;
 			buildPhases = (
+				3CF1730D2504A231D0DECCC2 /* Check Pods Manifest.lock */,
 				1BD3C6341D0FD5D700F7246D /* Sources */,
 				1BD3C6351D0FD5D700F7246D /* Frameworks */,
 				1BD3C6361D0FD5D700F7246D /* Resources */,
+				266429131CB5B2741B96D8E4 /* Embed Pods Frameworks */,
+				35CA5BE96ECAB0E41ED13464 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,15 +347,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		266429131CB5B2741B96D8E4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35CA5BE96ECAB0E41ED13464 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CF1730D2504A231D0DECCC2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1BD3C6341D0FD5D700F7246D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD3C6431D0FD5D700F7246D /* ViewController.m in Sources */,
+				1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
+				1B73BEB61D2A885D003E6604 /* BNRConstants.m in Sources */,
 				1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */,
 				1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */,
+				1B73BEB91D2A88F1003E6604 /* BNRFindPeripheralVC.m in Sources */,
 				1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */,
+				1B73BEB41D2A885D003E6604 /* BNRBLECentral.m in Sources */,
+				1B73BEAA1D2A8676003E6604 /* BNRMainVC.m in Sources */,
+				1B73BEB51D2A885D003E6604 /* BNRBLEPeripheral.m in Sources */,
 				1BD3C63D1D0FD5D700F7246D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B73BEBD1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
+				1B73BEAB1D2A8676003E6604 /* BNRMainVC.m in Sources */,
 				1BD3C6561D0FD5D700F7246D /* BleVOIPTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +427,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B73BEBE1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
+				1B73BEAC1D2A8676003E6604 /* BNRMainVC.m in Sources */,
 				1BD3C6611D0FD5D700F7246D /* BleVOIPUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +552,7 @@
 		};
 		1BD3C6661D0FD5D700F7246D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BleVOIP/Info.plist;
@@ -435,6 +565,7 @@
 		};
 		1BD3C6671D0FD5D700F7246D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BleVOIP/Info.plist;
