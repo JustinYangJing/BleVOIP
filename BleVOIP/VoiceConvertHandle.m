@@ -326,6 +326,8 @@ OSStatus inputRenderTone(
     bufferList->mBuffers[0].mDataByteSize = maxPacketSize;
     
     for (; ; ) {
+        @autoreleasepool {
+            
         
         pthread_mutex_lock(&recordLock);
         while (ABS(recordStruct.rear - recordStruct.front) < 1024 ) {
@@ -346,7 +348,7 @@ OSStatus inputRenderTone(
                                                    bufferList,
                                                    outputPacketDescriptions),
                    "cant set AudioConverterFillComplexBuffer");
-
+        free(outputPacketDescriptions);
         free(readyData);
 
         NSMutableData *fullData = [NSMutableData dataWithBytes:bufferList->mBuffers[0].mData length:bufferList->mBuffers[0].mDataByteSize];
@@ -371,7 +373,7 @@ OSStatus inputRenderTone(
 //        if (couldSignal) {
 //            pthread_cond_signal(&playCond);
 //        }
-        
+        }
     }
 }
 -(void)playWithData:(NSData *)data{
@@ -395,6 +397,8 @@ OSStatus inputRenderTone(
 }
 -(void)playData{
     for (; ; ) {
+        @autoreleasepool {
+            
         NSMutableData *data = [[NSMutableData alloc] init];
         pthread_mutex_lock(&playLock);
         if (self.aacArry.count%8 != 0 || self.aacArry.count == 0) {
@@ -426,9 +430,9 @@ OSStatus inputRenderTone(
         memcpy(bufferObj.buffer->mAudioData,[data bytes] , [data length]);
         bufferObj.buffer->mAudioDataByteSize = (UInt32)[data length];
         CheckError(AudioQueueEnqueueBuffer(_playQueue, bufferObj.buffer, 8, paks), "cant enqueue");
-    
+        free(paks);
 
-        
+        }
     }
 }
 OSStatus encodeConverterComplexInputDataProc(AudioConverterRef inAudioConverter,

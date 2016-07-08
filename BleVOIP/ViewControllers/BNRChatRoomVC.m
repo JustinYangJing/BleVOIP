@@ -41,8 +41,10 @@
 }
 
 -(void)server:(BNRServer *)server peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state{
-    if (state == MCSessionStateNotConnected) {
-        [(BNRClient *)self.manager reConnect];
+    if (self.roleType == RoleTypeClient) {
+        if (state == MCSessionStateNotConnected) {
+            [(BNRClient *)self.manager reConnect];
+        }
     }
 }
 
