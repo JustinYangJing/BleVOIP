@@ -50,11 +50,7 @@
 }
 
 -(void)server:(BNRServer *)server peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state{
-    if (self.roleType == RoleTypeClient) {
-        if (state == MCSessionStateNotConnected) {
-            [(BNRClient *)self.manager reConnect];
-        }
-    }
+
 }
 
 -(void)client:(BNRClient *)client foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info{
@@ -62,7 +58,11 @@
 }
 //如何客户端监测到断开了，再去重新连接
 -(void)client:(BNRClient *)client connectServerStateChange:(MCSessionState)state{
-    
+    if (self.roleType == RoleTypeClient) {
+        if (state == MCSessionStateNotConnected) {
+            [(BNRClient *)self.manager reConnect];
+        }
+    }
 }
 #pragma mark - voice delegate
 -(void)covertedData:(NSData *)data{
