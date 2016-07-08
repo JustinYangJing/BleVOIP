@@ -54,15 +54,15 @@
 }
 
 -(void)client:(BNRClient *)client foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info{
-
+    [(BNRClient *)self.manager connectAvailableServer:peerID];
 }
 //如何客户端监测到断开了，再去重新连接
 -(void)client:(BNRClient *)client connectServerStateChange:(MCSessionState)state{
-    if (self.roleType == RoleTypeClient) {
-        if (state == MCSessionStateNotConnected) {
-            [(BNRClient *)self.manager reConnect];
-        }
-    }
+//    if (self.roleType == RoleTypeClient) {
+//        if (state == MCSessionStateNotConnected) {
+//            [(BNRClient *)self.manager reConnect];
+//        }
+//    }
 }
 #pragma mark - voice delegate
 -(void)covertedData:(NSData *)data{
