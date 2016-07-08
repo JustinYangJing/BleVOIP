@@ -7,7 +7,8 @@
 //
 
 #import "BNRMainVC.h"
-#import "BNRChatRoomVC.h"
+#import "BNRCommication.h"
+#import "BNRConnectVC.h"
 @interface BNRMainVC ()
 
 @end
@@ -23,11 +24,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)pushToChatRoomVC:(id)sender {
+- (IBAction)pushToConnectVC:(UIButton *)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    BNRChatRoomVC *chatRoomVC = [sb instantiateViewControllerWithIdentifier:@"chatroom"];
-    chatRoomVC.chatRoomType = ChatRoomTypeClient;
-    [self.navigationController pushViewController:chatRoomVC animated:YES];
+    BNRConnectVC *vc = [sb instantiateViewControllerWithIdentifier:@"connectVC"];
+    if ([sender.currentTitle isEqualToString:@"Host"]) {
+        vc.roleType = RoleTypeHost;
+    }else{
+        vc.roleType = RoleTypeClient;
+    }
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

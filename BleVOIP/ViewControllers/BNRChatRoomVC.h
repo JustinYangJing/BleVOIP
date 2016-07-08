@@ -7,17 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef NS_ENUM(NSInteger,ChatRoomType) {
-    /**
-     *  设备作为CBCentralManager端
-     */
-    ChatRoomTypeHost,
-    /**
-     *  设备作为CBPeripheralManager端
-     */
-    ChatRoomTypeClient
-};
+
 
 @interface BNRChatRoomVC : UIViewController
-@property (nonatomic) ChatRoomType chatRoomType;
+@property (nonatomic) RoleType roleType;
+@property (nonatomic,weak) BNRCommication *manager;
 @end

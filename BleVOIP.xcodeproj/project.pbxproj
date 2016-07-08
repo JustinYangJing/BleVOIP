@@ -14,10 +14,14 @@
 		1B73BEB41D2A885D003E6604 /* BNRBLECentral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEAF1D2A885D003E6604 /* BNRBLECentral.m */; };
 		1B73BEB51D2A885D003E6604 /* BNRBLEPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */; };
 		1B73BEB61D2A885D003E6604 /* BNRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB31D2A885D003E6604 /* BNRConstants.m */; };
-		1B73BEB91D2A88F1003E6604 /* BNRFindPeripheralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB81D2A88F1003E6604 /* BNRFindPeripheralVC.m */; };
+		1B73BEB91D2A88F1003E6604 /* BNRConnectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */; };
 		1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
 		1B73BEBD1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
 		1B73BEBE1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
+		1BAD4DE01D2E3FD200E14ABE /* BNRClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD4DDB1D2E3FD200E14ABE /* BNRClient.m */; };
+		1BAD4DE11D2E3FD300E14ABE /* BNRCommication.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD4DDD1D2E3FD200E14ABE /* BNRCommication.m */; };
+		1BAD4DE21D2E3FD300E14ABE /* BNRServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD4DDF1D2E3FD200E14ABE /* BNRServer.m */; };
+		1BAD4DE41D2E3FE800E14ABE /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAD4DE31D2E3FE800E14ABE /* MultipeerConnectivity.framework */; };
 		1BD3C63D1D0FD5D700F7246D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C63C1D0FD5D700F7246D /* main.m */; };
 		1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */; };
 		1BD3C6461D0FD5D700F7246D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3C6441D0FD5D700F7246D /* Main.storyboard */; };
@@ -57,10 +61,18 @@
 		1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRBLEPeripheral.m; sourceTree = "<group>"; };
 		1B73BEB21D2A885D003E6604 /* BNRConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConstants.h; sourceTree = "<group>"; };
 		1B73BEB31D2A885D003E6604 /* BNRConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConstants.m; sourceTree = "<group>"; };
-		1B73BEB71D2A88F1003E6604 /* BNRFindPeripheralVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRFindPeripheralVC.h; sourceTree = "<group>"; };
-		1B73BEB81D2A88F1003E6604 /* BNRFindPeripheralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRFindPeripheralVC.m; sourceTree = "<group>"; };
+		1B73BEB71D2A88F1003E6604 /* BNRConnectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConnectVC.h; sourceTree = "<group>"; };
+		1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConnectVC.m; sourceTree = "<group>"; };
 		1B73BEBA1D2A8DA4003E6604 /* BNRChatRoomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRChatRoomVC.h; path = ViewControllers/BNRChatRoomVC.h; sourceTree = "<group>"; };
 		1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRChatRoomVC.m; path = ViewControllers/BNRChatRoomVC.m; sourceTree = "<group>"; };
+		1BAD4DDA1D2E3FD200E14ABE /* BNRClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRClient.h; sourceTree = "<group>"; };
+		1BAD4DDB1D2E3FD200E14ABE /* BNRClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRClient.m; sourceTree = "<group>"; };
+		1BAD4DDC1D2E3FD200E14ABE /* BNRCommication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCommication.h; sourceTree = "<group>"; };
+		1BAD4DDD1D2E3FD200E14ABE /* BNRCommication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCommication.m; sourceTree = "<group>"; };
+		1BAD4DDE1D2E3FD200E14ABE /* BNRServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRServer.h; sourceTree = "<group>"; };
+		1BAD4DDF1D2E3FD200E14ABE /* BNRServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRServer.m; sourceTree = "<group>"; };
+		1BAD4DE31D2E3FE800E14ABE /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		1BAD4DE51D2E41AA00E14ABE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1BD3C6381D0FD5D700F7246D /* BleVOIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BleVOIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD3C63C1D0FD5D700F7246D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BD3C63E1D0FD5D700F7246D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAD4DE41D2E3FE800E14ABE /* MultipeerConnectivity.framework in Frameworks */,
 				98ACDD75E188EB95708ECD95 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,8 +124,8 @@
 		1B73BEA71D2A8647003E6604 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1B73BEB71D2A88F1003E6604 /* BNRFindPeripheralVC.h */,
-				1B73BEB81D2A88F1003E6604 /* BNRFindPeripheralVC.m */,
+				1B73BEB71D2A88F1003E6604 /* BNRConnectVC.h */,
+				1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */,
 				1B73BEA81D2A8676003E6604 /* BNRMainVC.h */,
 				1B73BEA91D2A8676003E6604 /* BNRMainVC.m */,
 				1B73BEBA1D2A8DA4003E6604 /* BNRChatRoomVC.h */,
@@ -132,6 +145,19 @@
 				1B73BEB31D2A885D003E6604 /* BNRConstants.m */,
 			);
 			path = BleCommication;
+			sourceTree = "<group>";
+		};
+		1BAD4DD91D2E3FD200E14ABE /* Commumication */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD4DDA1D2E3FD200E14ABE /* BNRClient.h */,
+				1BAD4DDB1D2E3FD200E14ABE /* BNRClient.m */,
+				1BAD4DDE1D2E3FD200E14ABE /* BNRServer.h */,
+				1BAD4DDF1D2E3FD200E14ABE /* BNRServer.m */,
+				1BAD4DDC1D2E3FD200E14ABE /* BNRCommication.h */,
+				1BAD4DDD1D2E3FD200E14ABE /* BNRCommication.m */,
+			);
+			path = Commumication;
 			sourceTree = "<group>";
 		};
 		1BD3C62F1D0FD5D700F7246D = {
@@ -159,6 +185,7 @@
 		1BD3C63A1D0FD5D700F7246D /* BleVOIP */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD4DD91D2E3FD200E14ABE /* Commumication */,
 				1B73BEAD1D2A885D003E6604 /* BleCommication */,
 				1B73BEA71D2A8647003E6604 /* ViewControllers */,
 				1BD3C63E1D0FD5D700F7246D /* AppDelegate.h */,
@@ -180,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD3C63C1D0FD5D700F7246D /* main.m */,
+				1BAD4DE51D2E41AA00E14ABE /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -205,6 +233,7 @@
 		427FF451B9785437D2539B2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD4DE31D2E3FE800E14ABE /* MultipeerConnectivity.framework */,
 				2C2DBD61C1733CEF0655CAD9 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -401,10 +430,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
+				1BAD4DE01D2E3FD200E14ABE /* BNRClient.m in Sources */,
 				1B73BEB61D2A885D003E6604 /* BNRConstants.m in Sources */,
 				1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */,
+				1BAD4DE11D2E3FD300E14ABE /* BNRCommication.m in Sources */,
 				1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */,
-				1B73BEB91D2A88F1003E6604 /* BNRFindPeripheralVC.m in Sources */,
+				1BAD4DE21D2E3FD300E14ABE /* BNRServer.m in Sources */,
+				1B73BEB91D2A88F1003E6604 /* BNRConnectVC.m in Sources */,
 				1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */,
 				1B73BEB41D2A885D003E6604 /* BNRBLECentral.m in Sources */,
 				1B73BEAA1D2A8676003E6604 /* BNRMainVC.m in Sources */,
@@ -555,6 +587,8 @@
 			baseConfigurationReference = BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BleVOIP/PrefixHeader.pch";
 				INFOPLIST_FILE = BleVOIP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -568,6 +602,8 @@
 			baseConfigurationReference = 4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BleVOIP/PrefixHeader.pch";
 				INFOPLIST_FILE = BleVOIP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

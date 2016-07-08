@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qlc-1J-eGF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qlc-1J-eGF">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -36,17 +36,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAC-dU-SaT">
-                                <rect key="frame" x="50" y="103" width="50" height="30"/>
-                                <state key="normal" title="Central"/>
+                                <rect key="frame" x="50" y="103" width="33" height="30"/>
+                                <state key="normal" title="Host"/>
                                 <connections>
-                                    <segue destination="vp9-oR-hdE" kind="show" id="xc7-yJ-VkE"/>
+                                    <action selector="pushToConnectVC:" destination="8Mi-Kh-zeX" eventType="touchUpInside" id="CD2-CJ-Yo6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYu-Kq-03x">
-                                <rect key="frame" x="212" y="103" width="70" height="30"/>
-                                <state key="normal" title="Peripheral"/>
+                                <rect key="frame" x="242" y="103" width="40" height="30"/>
+                                <state key="normal" title="Client"/>
                                 <connections>
-                                    <action selector="pushToChatRoomVC:" destination="8Mi-Kh-zeX" eventType="touchUpInside" id="du3-U6-JPk"/>
+                                    <action selector="pushToConnectVC:" destination="8Mi-Kh-zeX" eventType="touchUpInside" id="QeW-Wd-5PK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-368" y="116"/>
         </scene>
-        <!--Find PeripheralVC-->
+        <!--ConnectVC-->
         <scene sceneID="30e-k3-Mya">
             <objects>
-                <tableViewController id="vp9-oR-hdE" customClass="BNRFindPeripheralVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="connectVC" id="vp9-oR-hdE" customClass="BNRConnectVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vQd-ic-dSa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,18 +78,18 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rww-7u-Mlo" id="lmA-qt-vY6">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="epw-hk-XGY">
-                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6vH-qy-I2g">
-                                            <rect key="frame" x="263.5" y="12" width="41.5" height="19.5"/>
+                                            <rect key="frame" x="263" y="12" width="42" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,16 +104,17 @@
                             <outlet property="delegate" destination="vp9-oR-hdE" id="mA0-tm-Pyg"/>
                         </connections>
                     </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cei-kn-eUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="116"/>
+            <point key="canvasLocation" x="-11" y="104"/>
         </scene>
         <!--Chat RoomVC-->
         <scene sceneID="D5g-mZ-C5o">
             <objects>
-                <viewController storyboardIdentifier="chatroom" id="mH5-N9-pcc" customClass="BNRChatRoomVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatrRoomVC" id="mH5-N9-pcc" customClass="BNRChatRoomVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lwq-IH-JOt"/>
                         <viewControllerLayoutGuide type="bottom" id="bgh-fL-UV9"/>

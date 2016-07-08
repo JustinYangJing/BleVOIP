@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BNRFindPeripheralVC : UITableViewController
+@interface BNRConnectVC : UITableViewController
 
+@property (nonatomic)       RoleType    roleType;
 @end
