@@ -89,6 +89,16 @@ RecordStruct    recordStruct;
     });
     return handle;
 }
+-(void)setStartRecord:(BOOL)startRecord{
+    _startRecord = startRecord;
+    _startRecord? CheckError(AudioOutputUnitStart(_toneUnit), "couldnt start audio unit"): CheckError(AudioOutputUnitStop(_toneUnit), "couldnt stop audio unit");
+}
+-(void)audioSessionRouteChangeHandle:(NSNotification *)noti{
+    [self.session setActive:YES error:nil];
+    if (self.startRecord) {
+        CheckError(AudioOutputUnitStart(_toneUnit), "couldnt start audio unit");
+    }
+}
 -(void)configAudio{
     _inputProc.inputProc = inputRenderTone;
     _inputProc.inputProcRefCon = (__bridge void *)(self);
@@ -99,7 +109,7 @@ RecordStruct    recordStruct;
     [self.session setCategory:AVAudioSessionCategoryPlayAndRecord error:&error];
     handleError(error);
     //route变化监听
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioSessionRouteChangeHandle:) name:AVAudioSessionRouteChangeNotification object:self.session];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioSessionRouteChangeHandle:) name:AVAudioSessionRouteChangeNotification object:self.session];
     
     [self.session setPreferredIOBufferDuration:0.005 error:&error];
     handleError(error);

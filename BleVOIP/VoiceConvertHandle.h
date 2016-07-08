@@ -16,7 +16,7 @@
 
 @interface VoiceConvertHandle : NSObject
 @property (nonatomic,weak) id<VoiceConvertHandleDelegate> delegate;
-
+@property (nonatomic)   BOOL    startRecord;
 +(instancetype)shareInstance;
 -(void)playWithData:(NSData *)data;
 @end

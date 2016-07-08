@@ -33,6 +33,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)realRecordVoiceHandle:(UIButton *)sender {
+    if ([sender.currentTitle isEqualToString:@"开始通话"]) {
+        [VoiceConvertHandle shareInstance].startRecord = YES;
+        [sender setTitle:@"停止通话" forState:UIControlStateNormal];
+    }else{
+        [VoiceConvertHandle shareInstance].startRecord = NO;
+        [sender setTitle:@"开始通话" forState:UIControlStateNormal];
+    }
+}
 
 
 #pragma mark -- BNRClientDelegate
