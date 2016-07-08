@@ -166,7 +166,7 @@ RecordStruct    recordStruct;
     
     CheckError(AudioUnitInitialize(_toneUnit),
                "couldn't initialize the remote I/O unit");
-    CheckError(AudioOutputUnitStart(_toneUnit), "couldnt start audio unit");
+//    CheckError(AudioOutputUnitStart(_toneUnit), "couldnt start audio unit");
     
    
     
