@@ -36,6 +36,10 @@ NSString * const kServerName         =       @"VOIP";
 }
 
 -(void)sendData:(NSData *)data{
+    if(self.session.connectedPeers.count == 0)
+    {
+        return;
+    }
     NSError *err;
     [self.session sendData:data toPeers:self.session.connectedPeers withMode:MCSessionSendDataReliable error:&err];
     if (err) {
