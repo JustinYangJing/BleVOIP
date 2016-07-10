@@ -66,7 +66,7 @@
 }
 #pragma mark - voice delegate
 -(void)covertedData:(NSData *)data{
-
+    NSLog(@"dsfasd");
     [self.manager sendData:data];
 }
 @end
