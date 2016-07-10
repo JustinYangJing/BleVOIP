@@ -94,6 +94,9 @@ RecordStruct    recordStruct;
     _startRecord? CheckError(AudioOutputUnitStart(_toneUnit), "couldnt start audio unit"): CheckError(AudioOutputUnitStop(_toneUnit), "couldnt stop audio unit");
 }
 -(void)audioSessionRouteChangeHandle:(NSNotification *)noti{
+    NSError *error;
+    [self.session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
+    handleError(error);
     [self.session setActive:YES error:nil];
     if (self.startRecord) {
         CheckError(AudioOutputUnitStart(_toneUnit), "couldnt start audio unit");
@@ -116,6 +119,9 @@ RecordStruct    recordStruct;
     [self.session setPreferredSampleRate:kSmaple error:&error];
     handleError(error);
     
+    [self.session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
+    handleError(error);
+    
     [self.session setActive:YES error:&error];
     handleError(error);
     
@@ -123,7 +129,7 @@ RecordStruct    recordStruct;
     //    Obtain a RemoteIO unit instance
     AudioComponentDescription acd;
     acd.componentType = kAudioUnitType_Output;
-    acd.componentSubType = kAudioUnitSubType_VoiceProcessingIO;
+    acd.componentSubType = kAudioUnitSubType_RemoteIO;
     acd.componentFlags = 0;
     acd.componentFlagsMask = 0;
     acd.componentManufacturer = kAudioUnitManufacturer_Apple;
