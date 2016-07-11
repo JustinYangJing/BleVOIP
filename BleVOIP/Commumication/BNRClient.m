@@ -7,8 +7,9 @@
 //
 
 #import "BNRClient.h"
-
-@interface BNRClient ()<MCNearbyServiceBrowserDelegate, MCSessionDelegate,MCNearbyServiceAdvertiserDelegate>
+#include <pthread.h>
+@interface BNRClient ()<MCNearbyServiceBrowserDelegate, MCSessionDelegate,
+                        MCNearbyServiceAdvertiserDelegate,NSStreamDelegate>
 
 
 /**
@@ -19,9 +20,16 @@
 
 //客户端也广播，用于接收其他客户端的连接
 @property(nonatomic,strong)MCNearbyServiceAdvertiser *advertiser;
+
+@property (nonatomic,strong) NSInputStream           *inputStream;
+
+@property (nonatomic,strong) NSMutableArray          *soundDataArr;
+
 @end
 
-@implementation BNRClient
+pthread_mutex_t lock;
+pthread_cond_t  cond;
+@implementation BNRClient 
 @dynamic delegate;
 
 +(instancetype)sharedInstance{
@@ -36,6 +44,12 @@
 
 -(void)setup{
 //    _localPeerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
+    self.soundDataArr = [NSMutableArray array];
+    int rc;
+    rc = pthread_mutex_init(&lock,NULL);
+    assert(rc==0);
+    rc = pthread_cond_init(&cond, NULL);
+    assert(rc==0);
 }
 
 -(void)startSearchingServers{
@@ -64,7 +78,30 @@
 -(void)reConnect{
     [self.browser invitePeer:self.serverPeerID toSession:self.session withContext:nil timeout:30];
 }
-
+-(void)sendData:(NSData *)data{
+    if (self.session.connectedPeers.count == 0) {
+        return;
+    }
+    static NSOutputStream *outputStream;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSError *err;
+        outputStream = [self.session startStreamWithName:@"client stream"
+                                                  toPeer:self.session.connectedPeers[0]
+                                                   error:&err];
+        if (err) {
+            NSLog(@"%@",err);
+            exit(1);
+        }
+        [outputStream setDelegate:self];
+        [outputStream open];
+    });
+    
+    pthread_mutex_lock(&lock);
+    [self.soundDataArr addObject:data];
+    pthread_mutex_unlock(&lock);
+    pthread_cond_signal(&cond);
+}
 #pragma mark - MCNearbyServiceBrowserDelegate
 - (void)        browser:(MCNearbyServiceBrowser *)browser
               foundPeer:(MCPeerID *)peerID
@@ -109,7 +146,15 @@
 - (void)    session:(MCSession *)session
    didReceiveStream:(NSInputStream *)stream
            withName:(NSString *)streamName
-           fromPeer:(MCPeerID *)peerID{}
+           fromPeer:(MCPeerID *)peerID{
+    if ([self.serverPeerID.displayName isEqual:peerID.displayName]) {
+        self.inputStream = stream;
+        [self.inputStream setDelegate:self];
+        [self.inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop]
+                                    forMode:NSRunLoopCommonModes];
+        [self.inputStream open];
+    }
+}
 
 // Start receiving a resource from remote peer.
 - (void)                    session:(MCSession *)session
@@ -126,4 +171,42 @@
                               atURL:(NSURL *)localURL
                           withError:(nullable NSError *)error{}
 
+
+#pragma mark - NSStreamDelegate
+-(void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{
+    switch (eventCode) {
+        case NSStreamEventHasBytesAvailable:{
+            UInt8 buf[1024];
+            NSInputStream *inputStream = (NSInputStream *)aStream;
+            NSInteger length = [inputStream read:buf maxLength:sizeof(buf)];
+            NSData *data = [NSData dataWithBytes:buf length:length];
+            if([self.delegate respondsToSelector:@selector(commication:didReceiveData:fromPeerID:)]){
+                [self.delegate commication:self didReceiveData:data fromPeerID:nil];
+            }
+        }
+            break;
+        case NSStreamEventOpenCompleted:
+            NSLog(@"open stream completed");
+            break;
+        case NSStreamEventEndEncountered:
+            NSLog(@"NSStreamEventEndEncountered");
+            [aStream close];
+            break;
+        case NSStreamEventHasSpaceAvailable:{
+            NSOutputStream *outputStream = (NSOutputStream *)aStream;
+            pthread_mutex_lock(&lock);
+            while (self.soundDataArr.count == 0) {
+                pthread_cond_wait(&cond, &lock);
+            }
+            NSData *data = [self.soundDataArr firstObject];
+            UInt8 *buf = (UInt8 *)[data bytes];
+            [outputStream write:buf maxLength:[data length]];
+            [self.soundDataArr removeObjectAtIndex:0];
+            pthread_mutex_unlock(&lock);
+        }
+            break;
+        default:
+            break;
+    }
+}
 @end
