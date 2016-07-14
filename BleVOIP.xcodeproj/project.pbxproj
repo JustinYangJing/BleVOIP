@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B32C40A1D25161D00411C54 /* BNRAudioData.m */; };
+		1B2825971D372C4A00A7BF20 /* BNRAudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2825941D372C4A00A7BF20 /* BNRAudioData.m */; };
+		1B2825981D372C4A00A7BF20 /* BNRAudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2825941D372C4A00A7BF20 /* BNRAudioData.m */; };
+		1B2825991D372C4A00A7BF20 /* BNRAudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2825941D372C4A00A7BF20 /* BNRAudioData.m */; };
+		1B28259A1D372C4A00A7BF20 /* VoiceConvertHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2825961D372C4A00A7BF20 /* VoiceConvertHandle.m */; };
+		1B28259B1D372C4A00A7BF20 /* VoiceConvertHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2825961D372C4A00A7BF20 /* VoiceConvertHandle.m */; };
+		1B28259C1D372C4A00A7BF20 /* VoiceConvertHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2825961D372C4A00A7BF20 /* VoiceConvertHandle.m */; };
+		1B28259F1D372C5B00A7BF20 /* BNRConnectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B28259E1D372C5B00A7BF20 /* BNRConnectVC.m */; };
+		1B2825A01D372C5B00A7BF20 /* BNRConnectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B28259E1D372C5B00A7BF20 /* BNRConnectVC.m */; };
+		1B2825A11D372C5B00A7BF20 /* BNRConnectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B28259E1D372C5B00A7BF20 /* BNRConnectVC.m */; };
 		1B73BEAA1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
 		1B73BEAB1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
 		1B73BEAC1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
-		1B73BEB91D2A88F1003E6604 /* BNRConnectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */; };
 		1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
 		1B73BEBD1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
 		1B73BEBE1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
@@ -26,7 +33,6 @@
 		1BD3C64B1D0FD5D700F7246D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3C6491D0FD5D700F7246D /* LaunchScreen.storyboard */; };
 		1BD3C6561D0FD5D700F7246D /* BleVOIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6551D0FD5D700F7246D /* BleVOIPTests.m */; };
 		1BD3C6611D0FD5D700F7246D /* BleVOIPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6601D0FD5D700F7246D /* BleVOIPUITests.m */; };
-		1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */; };
 		98ACDD75E188EB95708ECD95 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DBD61C1733CEF0655CAD9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -48,12 +54,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B32C4091D25161D00411C54 /* BNRAudioData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAudioData.h; sourceTree = "<group>"; };
-		1B32C40A1D25161D00411C54 /* BNRAudioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAudioData.m; sourceTree = "<group>"; };
+		1B2825931D372C4A00A7BF20 /* BNRAudioData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAudioData.h; sourceTree = "<group>"; };
+		1B2825941D372C4A00A7BF20 /* BNRAudioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAudioData.m; sourceTree = "<group>"; };
+		1B2825951D372C4A00A7BF20 /* VoiceConvertHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConvertHandle.h; sourceTree = "<group>"; };
+		1B2825961D372C4A00A7BF20 /* VoiceConvertHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceConvertHandle.m; sourceTree = "<group>"; };
+		1B28259D1D372C5B00A7BF20 /* BNRConnectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRConnectVC.h; path = ViewControllers/BNRConnectVC.h; sourceTree = "<group>"; };
+		1B28259E1D372C5B00A7BF20 /* BNRConnectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRConnectVC.m; path = ViewControllers/BNRConnectVC.m; sourceTree = "<group>"; };
 		1B73BEA81D2A8676003E6604 /* BNRMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRMainVC.h; path = ViewControllers/BNRMainVC.h; sourceTree = "<group>"; };
 		1B73BEA91D2A8676003E6604 /* BNRMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRMainVC.m; path = ViewControllers/BNRMainVC.m; sourceTree = "<group>"; };
-		1B73BEB71D2A88F1003E6604 /* BNRConnectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConnectVC.h; sourceTree = "<group>"; };
-		1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConnectVC.m; sourceTree = "<group>"; };
 		1B73BEBA1D2A8DA4003E6604 /* BNRChatRoomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRChatRoomVC.h; path = ViewControllers/BNRChatRoomVC.h; sourceTree = "<group>"; };
 		1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRChatRoomVC.m; path = ViewControllers/BNRChatRoomVC.m; sourceTree = "<group>"; };
 		1BAD4DDA1D2E3FD200E14ABE /* BNRClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRClient.h; sourceTree = "<group>"; };
@@ -78,8 +86,6 @@
 		1BD3C65C1D0FD5D700F7246D /* BleVOIPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BleVOIPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD3C6601D0FD5D700F7246D /* BleVOIPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BleVOIPUITests.m; sourceTree = "<group>"; };
 		1BD3C6621D0FD5D700F7246D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BD3C66E1D0FD8B400F7246D /* VoiceConvertHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConvertHandle.h; sourceTree = "<group>"; };
-		1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceConvertHandle.m; sourceTree = "<group>"; };
 		2C2DBD61C1733CEF0655CAD9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,11 +118,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2825921D372C4A00A7BF20 /* VoiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				1B2825931D372C4A00A7BF20 /* BNRAudioData.h */,
+				1B2825941D372C4A00A7BF20 /* BNRAudioData.m */,
+				1B2825951D372C4A00A7BF20 /* VoiceConvertHandle.h */,
+				1B2825961D372C4A00A7BF20 /* VoiceConvertHandle.m */,
+			);
+			path = VoiceManager;
+			sourceTree = "<group>";
+		};
 		1B73BEA71D2A8647003E6604 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1B73BEB71D2A88F1003E6604 /* BNRConnectVC.h */,
-				1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */,
+				1B28259D1D372C5B00A7BF20 /* BNRConnectVC.h */,
+				1B28259E1D372C5B00A7BF20 /* BNRConnectVC.m */,
 				1B73BEA81D2A8676003E6604 /* BNRMainVC.h */,
 				1B73BEA91D2A8676003E6604 /* BNRMainVC.m */,
 				1B73BEBA1D2A8DA4003E6604 /* BNRChatRoomVC.h */,
@@ -163,19 +180,16 @@
 		1BD3C63A1D0FD5D700F7246D /* BleVOIP */ = {
 			isa = PBXGroup;
 			children = (
+				1B2825921D372C4A00A7BF20 /* VoiceManager */,
 				1BAD4DD91D2E3FD200E14ABE /* Commumication */,
 				1B73BEA71D2A8647003E6604 /* ViewControllers */,
 				1BD3C63E1D0FD5D700F7246D /* AppDelegate.h */,
 				1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */,
-				1BD3C66E1D0FD8B400F7246D /* VoiceConvertHandle.h */,
-				1BD3C66F1D0FD8B400F7246D /* VoiceConvertHandle.m */,
 				1BD3C6441D0FD5D700F7246D /* Main.storyboard */,
 				1BD3C6471D0FD5D700F7246D /* Assets.xcassets */,
 				1BD3C6491D0FD5D700F7246D /* LaunchScreen.storyboard */,
 				1BD3C64C1D0FD5D700F7246D /* Info.plist */,
 				1BD3C63B1D0FD5D700F7246D /* Supporting Files */,
-				1B32C4091D25161D00411C54 /* BNRAudioData.h */,
-				1B32C40A1D25161D00411C54 /* BNRAudioData.m */,
 			);
 			path = BleVOIP;
 			sourceTree = "<group>";
@@ -408,14 +422,14 @@
 			files = (
 				1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
 				1BAD4DE01D2E3FD200E14ABE /* BNRClient.m in Sources */,
+				1B28259F1D372C5B00A7BF20 /* BNRConnectVC.m in Sources */,
 				1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */,
+				1B28259A1D372C4A00A7BF20 /* VoiceConvertHandle.m in Sources */,
 				1BAD4DE11D2E3FD300E14ABE /* BNRCommication.m in Sources */,
-				1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */,
 				1BAD4DE21D2E3FD300E14ABE /* BNRServer.m in Sources */,
-				1B73BEB91D2A88F1003E6604 /* BNRConnectVC.m in Sources */,
-				1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */,
 				1B73BEAA1D2A8676003E6604 /* BNRMainVC.m in Sources */,
 				1BD3C63D1D0FD5D700F7246D /* main.m in Sources */,
+				1B2825971D372C4A00A7BF20 /* BNRAudioData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +440,9 @@
 				1B73BEBD1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
 				1B73BEAB1D2A8676003E6604 /* BNRMainVC.m in Sources */,
 				1BD3C6561D0FD5D700F7246D /* BleVOIPTests.m in Sources */,
+				1B28259B1D372C4A00A7BF20 /* VoiceConvertHandle.m in Sources */,
+				1B2825A01D372C5B00A7BF20 /* BNRConnectVC.m in Sources */,
+				1B2825981D372C4A00A7BF20 /* BNRAudioData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +453,9 @@
 				1B73BEBE1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
 				1B73BEAC1D2A8676003E6604 /* BNRMainVC.m in Sources */,
 				1BD3C6611D0FD5D700F7246D /* BleVOIPUITests.m in Sources */,
+				1B28259C1D372C4A00A7BF20 /* VoiceConvertHandle.m in Sources */,
+				1B2825A11D372C5B00A7BF20 /* BNRConnectVC.m in Sources */,
+				1B2825991D372C4A00A7BF20 /* BNRAudioData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
