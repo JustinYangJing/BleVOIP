@@ -11,9 +11,6 @@
 		1B73BEAA1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
 		1B73BEAB1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
 		1B73BEAC1D2A8676003E6604 /* BNRMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEA91D2A8676003E6604 /* BNRMainVC.m */; };
-		1B73BEB41D2A885D003E6604 /* BNRBLECentral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEAF1D2A885D003E6604 /* BNRBLECentral.m */; };
-		1B73BEB51D2A885D003E6604 /* BNRBLEPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */; };
-		1B73BEB61D2A885D003E6604 /* BNRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB31D2A885D003E6604 /* BNRConstants.m */; };
 		1B73BEB91D2A88F1003E6604 /* BNRConnectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */; };
 		1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
 		1B73BEBD1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B73BEBB1D2A8DA4003E6604 /* BNRChatRoomVC.m */; };
@@ -55,12 +52,6 @@
 		1B32C40A1D25161D00411C54 /* BNRAudioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAudioData.m; sourceTree = "<group>"; };
 		1B73BEA81D2A8676003E6604 /* BNRMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRMainVC.h; path = ViewControllers/BNRMainVC.h; sourceTree = "<group>"; };
 		1B73BEA91D2A8676003E6604 /* BNRMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRMainVC.m; path = ViewControllers/BNRMainVC.m; sourceTree = "<group>"; };
-		1B73BEAE1D2A885D003E6604 /* BNRBLECentral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRBLECentral.h; sourceTree = "<group>"; };
-		1B73BEAF1D2A885D003E6604 /* BNRBLECentral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRBLECentral.m; sourceTree = "<group>"; };
-		1B73BEB01D2A885D003E6604 /* BNRBLEPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRBLEPeripheral.h; sourceTree = "<group>"; };
-		1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRBLEPeripheral.m; sourceTree = "<group>"; };
-		1B73BEB21D2A885D003E6604 /* BNRConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConstants.h; sourceTree = "<group>"; };
-		1B73BEB31D2A885D003E6604 /* BNRConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConstants.m; sourceTree = "<group>"; };
 		1B73BEB71D2A88F1003E6604 /* BNRConnectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConnectVC.h; sourceTree = "<group>"; };
 		1B73BEB81D2A88F1003E6604 /* BNRConnectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConnectVC.m; sourceTree = "<group>"; };
 		1B73BEBA1D2A8DA4003E6604 /* BNRChatRoomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRChatRoomVC.h; path = ViewControllers/BNRChatRoomVC.h; sourceTree = "<group>"; };
@@ -134,19 +125,6 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		1B73BEAD1D2A885D003E6604 /* BleCommication */ = {
-			isa = PBXGroup;
-			children = (
-				1B73BEAE1D2A885D003E6604 /* BNRBLECentral.h */,
-				1B73BEAF1D2A885D003E6604 /* BNRBLECentral.m */,
-				1B73BEB01D2A885D003E6604 /* BNRBLEPeripheral.h */,
-				1B73BEB11D2A885D003E6604 /* BNRBLEPeripheral.m */,
-				1B73BEB21D2A885D003E6604 /* BNRConstants.h */,
-				1B73BEB31D2A885D003E6604 /* BNRConstants.m */,
-			);
-			path = BleCommication;
-			sourceTree = "<group>";
-		};
 		1BAD4DD91D2E3FD200E14ABE /* Commumication */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				1BAD4DD91D2E3FD200E14ABE /* Commumication */,
-				1B73BEAD1D2A885D003E6604 /* BleCommication */,
 				1B73BEA71D2A8647003E6604 /* ViewControllers */,
 				1BD3C63E1D0FD5D700F7246D /* AppDelegate.h */,
 				1BD3C63F1D0FD5D700F7246D /* AppDelegate.m */,
@@ -431,16 +408,13 @@
 			files = (
 				1B73BEBC1D2A8DA4003E6604 /* BNRChatRoomVC.m in Sources */,
 				1BAD4DE01D2E3FD200E14ABE /* BNRClient.m in Sources */,
-				1B73BEB61D2A885D003E6604 /* BNRConstants.m in Sources */,
 				1BD3C6401D0FD5D700F7246D /* AppDelegate.m in Sources */,
 				1BAD4DE11D2E3FD300E14ABE /* BNRCommication.m in Sources */,
 				1BD3C6701D0FD8B400F7246D /* VoiceConvertHandle.m in Sources */,
 				1BAD4DE21D2E3FD300E14ABE /* BNRServer.m in Sources */,
 				1B73BEB91D2A88F1003E6604 /* BNRConnectVC.m in Sources */,
 				1B32C40B1D25161D00411C54 /* BNRAudioData.m in Sources */,
-				1B73BEB41D2A885D003E6604 /* BNRBLECentral.m in Sources */,
 				1B73BEAA1D2A8676003E6604 /* BNRMainVC.m in Sources */,
-				1B73BEB51D2A885D003E6604 /* BNRBLEPeripheral.m in Sources */,
 				1BD3C63D1D0FD5D700F7246D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
