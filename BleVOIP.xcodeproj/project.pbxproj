@@ -33,7 +33,7 @@
 		1BD3C64B1D0FD5D700F7246D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3C6491D0FD5D700F7246D /* LaunchScreen.storyboard */; };
 		1BD3C6561D0FD5D700F7246D /* BleVOIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6551D0FD5D700F7246D /* BleVOIPTests.m */; };
 		1BD3C6611D0FD5D700F7246D /* BleVOIPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3C6601D0FD5D700F7246D /* BleVOIPUITests.m */; };
-		98ACDD75E188EB95708ECD95 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2DBD61C1733CEF0655CAD9 /* libPods.a */; };
+		69AB02BF98A782E2AFBD4AC5 /* libPods-BleVOIP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4809F560F00EEABB4EB687 /* libPods-BleVOIP.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,9 +86,9 @@
 		1BD3C65C1D0FD5D700F7246D /* BleVOIPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BleVOIPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD3C6601D0FD5D700F7246D /* BleVOIPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BleVOIPUITests.m; sourceTree = "<group>"; };
 		1BD3C6621D0FD5D700F7246D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C2DBD61C1733CEF0655CAD9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2584FE562768859AD63AA023 /* Pods-BleVOIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BleVOIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-BleVOIP/Pods-BleVOIP.release.xcconfig"; sourceTree = "<group>"; };
+		F178C606685DAD9F37EAB389 /* Pods-BleVOIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BleVOIP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BleVOIP/Pods-BleVOIP.debug.xcconfig"; sourceTree = "<group>"; };
+		FC4809F560F00EEABB4EB687 /* libPods-BleVOIP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BleVOIP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BAD4DE41D2E3FE800E14ABE /* MultipeerConnectivity.framework in Frameworks */,
-				98ACDD75E188EB95708ECD95 /* libPods.a in Frameworks */,
+				69AB02BF98A782E2AFBD4AC5 /* libPods-BleVOIP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +162,8 @@
 				1BD3C6541D0FD5D700F7246D /* BleVOIPTests */,
 				1BD3C65F1D0FD5D700F7246D /* BleVOIPUITests */,
 				1BD3C6391D0FD5D700F7246D /* Products */,
-				CAB790725CF7E34B215740FE /* Pods */,
 				427FF451B9785437D2539B2B /* Frameworks */,
+				BD22D7E0A0D994379F7BC59F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,16 +225,16 @@
 			isa = PBXGroup;
 			children = (
 				1BAD4DE31D2E3FE800E14ABE /* MultipeerConnectivity.framework */,
-				2C2DBD61C1733CEF0655CAD9 /* libPods.a */,
+				FC4809F560F00EEABB4EB687 /* libPods-BleVOIP.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CAB790725CF7E34B215740FE /* Pods */ = {
+		BD22D7E0A0D994379F7BC59F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */,
-				4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */,
+				F178C606685DAD9F37EAB389 /* Pods-BleVOIP.debug.xcconfig */,
+				2584FE562768859AD63AA023 /* Pods-BleVOIP.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -246,12 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BD3C6651D0FD5D700F7246D /* Build configuration list for PBXNativeTarget "BleVOIP" */;
 			buildPhases = (
-				3CF1730D2504A231D0DECCC2 /* Check Pods Manifest.lock */,
+				3C91300FEE9DCB7741178F48 /* [CP] Check Pods Manifest.lock */,
 				1BD3C6341D0FD5D700F7246D /* Sources */,
 				1BD3C6351D0FD5D700F7246D /* Frameworks */,
 				1BD3C6361D0FD5D700F7246D /* Resources */,
-				266429131CB5B2741B96D8E4 /* Embed Pods Frameworks */,
-				35CA5BE96ECAB0E41ED13464 /* Copy Pods Resources */,
+				9EA9B3D3A61DFD2C9421EC02 /* [CP] Embed Pods Frameworks */,
+				177BACF504CC3679C0C95B14 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +309,13 @@
 				TargetAttributes = {
 					1BD3C6371D0FD5D700F7246D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = WU2WFZ2B66;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					1BD3C6501D0FD5D700F7246D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -368,49 +375,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		266429131CB5B2741B96D8E4 /* Embed Pods Frameworks */ = {
+		177BACF504CC3679C0C95B14 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BleVOIP/Pods-BleVOIP-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		35CA5BE96ECAB0E41ED13464 /* Copy Pods Resources */ = {
+		3C91300FEE9DCB7741178F48 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		3CF1730D2504A231D0DECCC2 /* Check Pods Manifest.lock */ = {
+		9EA9B3D3A61DFD2C9421EC02 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BleVOIP/Pods-BleVOIP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -578,9 +585,10 @@
 		};
 		1BD3C6661D0FD5D700F7246D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA58186AD342A510A40EBAA4 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F178C606685DAD9F37EAB389 /* Pods-BleVOIP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WU2WFZ2B66;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BleVOIP/PrefixHeader.pch";
 				INFOPLIST_FILE = BleVOIP/Info.plist;
@@ -588,14 +596,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Het.BleVOIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c898d999-c204-4cdd-a098-0d2fb6a7e64e";
+				PROVISIONING_PROFILE_SPECIFIER = developAll;
 			};
 			name = Debug;
 		};
 		1BD3C6671D0FD5D700F7246D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4265AF87DAEEF8AACED2C166 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2584FE562768859AD63AA023 /* Pods-BleVOIP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WU2WFZ2B66;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BleVOIP/PrefixHeader.pch";
 				INFOPLIST_FILE = BleVOIP/Info.plist;
@@ -603,6 +614,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Het.BleVOIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c898d999-c204-4cdd-a098-0d2fb6a7e64e";
+				PROVISIONING_PROFILE_SPECIFIER = developAll;
 			};
 			name = Release;
 		};

@@ -129,7 +129,7 @@ RecordStruct    recordStruct;
     //    Obtain a RemoteIO unit instance
     AudioComponentDescription acd;
     acd.componentType = kAudioUnitType_Output;
-    acd.componentSubType = kAudioUnitSubType_RemoteIO;
+    acd.componentSubType = kAudioUnitSubType_VoiceProcessingIO;
     acd.componentFlags = 0;
     acd.componentFlagsMask = 0;
     acd.componentManufacturer = kAudioUnitManufacturer_Apple;
@@ -290,7 +290,7 @@ RecordStruct    recordStruct;
     
 }
 
-OSStatus inputRenderTone(
+static OSStatus inputRenderTone(
                          void *inRefCon,
                          AudioUnitRenderActionFlags 	*ioActionFlags,
                          const AudioTimeStamp 		*inTimeStamp,
